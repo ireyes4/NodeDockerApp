@@ -1,10 +1,16 @@
-FROM node:0.10.42
+FROM node:argon
 
+# Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-ONBUILD COPY . /usr/src/app/
+# Install app dependencies
+COPY package.json /usr/src/app/
+RUN npm install
+
+# Bundle app source
+COPY . /usr/src/app
 
 EXPOSE 8080
 
-CMD node app.js
+CMD [ "npm", "start" ]
