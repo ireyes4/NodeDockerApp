@@ -1,16 +1,11 @@
-FROM node:argon
-
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+FROM    centos:centos6
 
 # Install app dependencies
-COPY package.json /usr/src/app/
-RUN npm install
+COPY package.json /src/package.json
+RUN cd /src; npm install --production
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . /src
 
-EXPOSE 8080
-
-CMD node app.js
+EXPOSE  8080
+CMD ["node", "app.js"]
