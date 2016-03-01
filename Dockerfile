@@ -25,4 +25,4 @@ RUN npm install
 EXPOSE 8080
 
 # replace this with your main "server" script file
-CMD [ "node", "app.js" ]
+CMD [ "npm", "start" ]
