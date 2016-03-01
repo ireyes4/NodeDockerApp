@@ -1,5 +1,6 @@
 FROM node
 
+#copy source to directory
 COPY . /src
 WORKDIR /src
 
