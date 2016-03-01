@@ -15,7 +15,7 @@
 #CMD npm start /usr/src/app/app.js
 FROM node
 
-ADD . /src
+COPY . /src
 WORKDIR /src
 
 # install your application's dependencies
@@ -25,4 +25,4 @@ RUN npm install
 EXPOSE 8080
 
 # replace this with your main "server" script file
-CMD [ "node", "server.js" ]
+CMD [ "node", "app.js" ]
