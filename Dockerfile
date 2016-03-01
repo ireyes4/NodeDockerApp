@@ -15,7 +15,7 @@
 #CMD npm start /usr/src/app/app.js
 FROM node
 
-ADD ./src /src
+ADD . /src
 WORKDIR /src
 
 # install your application's dependencies
