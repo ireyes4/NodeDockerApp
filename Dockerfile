@@ -12,4 +12,4 @@ RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 8080
-CMD "npm start /usr/src/app/app.js"
+RUN npm start /usr/src/app/app.js
