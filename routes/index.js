@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/watchlist/:name', function(req, res, next) {
-  return WatchlistRouter.getWatchlist(req.name, res);
+  return WatchlistRouter.getWatchlist(req.params.name, res);
 });
 
 router.get('/watchlist', function(req, res, next) {
