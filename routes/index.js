@@ -1,19 +1,22 @@
 var express = require('express');
 var router = express.Router();
-var StandupRouter = require('../controllers/standup.server.controller.js');
+var WatchlistRouter = require('../controllers/watchlist.server.controller.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-/* GET home page. */
-router.get('/newnote', function(req, res, next) {
-  return StandupRouter.getNote(req, res);
+  res.render('index', { title: 'Watchlists' });
 });
 
+router.get('/watchlist/:name', function(req, res, next) {
+  return WatchlistRouter.getWatchlist(req.name, res);
+});
 
-router.post('/newnote', function(req, res, next) {
-  return StandupRouter.create(req, res);
+router.get('/watchlist', function(req, res, next) {
+  return WatchlistRouter.getWatchlists(req, res);
+});
+
+router.post('/watchlist', function(req, res, next) {
+  return WatchlistRouter.create(req, res);
 });
 
 

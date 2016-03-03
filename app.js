@@ -14,7 +14,7 @@ var swig = require('swig');
 app.engine('html', swig.renderFile);
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://mgsTest:mgsTestApp@ds037467.mlab.com:37467/mongoosetest');
+mongoose.connect('mongodb://watchlist:watchlist123@ds019708.mlab.com:19708/watchlistnode');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,30 +37,5 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
-
 
 module.exports = app;
