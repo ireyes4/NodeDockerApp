@@ -10,5 +10,5 @@ RUN npm install
 # replace this with your application's default port
 EXPOSE 3000
 
-# replace this with your main "server" script file
+# replace this with your main "server" script file and start Node service
 CMD [ "npm", "start" ]
